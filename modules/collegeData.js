@@ -1,6 +1,6 @@
 // Import the fs module to handle file system operations.
 const fs = require('fs');
-
+const path = require('path');
 // Define the Data class to structure the student and course data.
 class Data {
     constructor(students, courses) {
@@ -15,8 +15,11 @@ let dataCollection = null;
 // Function to initialize the data collection by reading and parsing JSON files.
 function initialize() {
     return new Promise((resolve, reject) => {
+        const studentsPath = path.join(__dirname, '../data', 'students.json');
+        const coursesPath = path.join(__dirname, '../data', 'courses.json');
+
         // Read the students.json file.
-        fs.readFile('./data/students.json', 'utf8', (err, studentDataFromFile) => {
+        fs.readFile(studentsPath, 'utf8', (err, studentDataFromFile) => {
             if (err) {
                 // If there's an error reading the file, reject the promise.
                 return reject("unable to read students.json");
@@ -32,7 +35,7 @@ function initialize() {
             }
 
             // Read the courses.json file.
-            fs.readFile('./data/courses.json', 'utf8', (err, courseDataFromFile) => {
+            fs.readFile(coursesPath, 'utf8', (err, courseDataFromFile) => {
                 if (err) {
                     // If there's an error reading the file, reject the promise.
                     return reject("unable to read courses.json");

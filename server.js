@@ -123,3 +123,4 @@ collegeData.initialize()
         console.log("Unable to start server: " + err);
     });
 
+module.exports = app;
