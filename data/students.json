@@ -3130,5 +3130,17 @@
     "status": "Part Time",
     "course": "1",
     "studentNum": 261
+  },
+  {
+    "firstName": "john",
+    "lastName": "doe",
+    "email": "jdoe@yahoo.com",
+    "addressStreet": "hampton street",
+    "addressCity": "toronto",
+    "addressProvince": "ontario",
+    "TA": true,
+    "status": "Full Time",
+    "course": "5",
+    "studentNum": 262
   }
 ]
